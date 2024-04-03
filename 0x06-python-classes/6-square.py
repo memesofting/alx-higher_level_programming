@@ -20,22 +20,23 @@ class Square:
             raise ValueError("size must be >= 0")
         else:
             self.__size = value
-    
+
     @property
     def position(self):
         return self.position
-    
+
     @position.setter
     def position(self, value):
         if not isinstance(value, tuple):
             raise TypeError("position must be a tuple of two integers")
-        
+
     def area(self):
         """method gets the area of squares"""
         result = self.size ** 2
         return result
 
     def my_print(self):
+        """method gets the position of squares"""
         if self.size == 0:
             print()
         else:

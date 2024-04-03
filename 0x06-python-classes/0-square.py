@@ -1,7 +1,7 @@
 #!/usr/bin/python3
+"""This is an empty module"""
+
+
 class Square:
-    """empty square class.
-    Attributes:
-        None
-    """
+    """This class is an empty square class."""
     pass

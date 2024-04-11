@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """This module defines a rectangle
-calculate are and perimeter
+calculate area and perimeter
 """
 
 
@@ -39,9 +39,17 @@ class Rectangle:
             self.__height = value
 
     def area(self):
-        a = self.__width * self.__height
-        return a
+        a = self.width * self.height
+        if self.width == 0 or self.height == 0:
+            a = 0
+            return a
+        else:
+            return a
 
     def perimeter(self):
-        p = 2 * (self.__width + self.__height)
-        return p
+        p = 2 * (self.width + self.height)
+        if self.width == 0 or self.height == 0:
+            p = 0
+            return p
+        else:
+            return p

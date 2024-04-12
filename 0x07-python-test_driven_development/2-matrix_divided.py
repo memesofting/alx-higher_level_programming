@@ -12,6 +12,15 @@ def matrix_divided(matrix, div):
         new matrix with divided elements
     """
 
+    if div is None:
+        raise TypeError(
+            "matrix_divided() missing 1 required positional argument: 'div'"
+            )
+    if matrix is None:
+        raise TypeError(
+            "matrix_divided() missing 2 required positional arguments: "
+            "'matrix' and 'div'"
+            )
     if not isinstance(div, (int, float)):
         raise TypeError("div must be a  number")
     if not all(isinstance(row, list) for row in matrix):

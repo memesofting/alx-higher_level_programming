@@ -11,8 +11,6 @@ def add_integer(a, b=98):
     Returns:
         The sum of two integers
     """
-    if a is None or b is None:
-        raise TypeError("add() missing 2 required positional arguments: 'a' and 'b'")
     if isinstance(a, float):
         a = int(a)
     if isinstance(b, float):

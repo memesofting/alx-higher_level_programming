@@ -14,9 +14,9 @@ def save_to_json_file(my_obj, filename):
     using JSON representation
     Args:
         my_obj: python object
-        filename: file to wb written to
+        filename: file to be written to
     Returns:
-        txt file
+        number of characters written
     """
 
     my_str = json.dumps(my_obj)

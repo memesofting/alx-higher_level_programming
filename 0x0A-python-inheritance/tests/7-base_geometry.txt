@@ -16,16 +16,22 @@
 ... except Exception as e:
 ...     print(f"[Exception] {str(e)}")
 ...
-[Exception] value must be greater than 0
+[Exception] me must be greater than 0
 >>> try:
 ...     bg.integer_validator("me", -2)
 ... except Exception as e:
 ...     print(f"[Exception] {str(e)}")
 ...
-[Exception] value must be greater than 0
+[Exception] me must be greater than 0
 >>> try:
 ...     bg.integer_validator("me", "go")
 ... except Exception as e:
 ...     print(f"[Exception] {str(e)}")
 ...
-[Exception] value must be an integer
+[Exception] me must be an integer
+>>> try:
+...     bg.integer_validator("me", 10.5)
+... except Exception as e:
+...     print(f"[Exception] {str(e)}")
+...
+[Exception] me must be an integer

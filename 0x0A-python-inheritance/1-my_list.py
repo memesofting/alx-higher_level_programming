@@ -14,8 +14,11 @@ class MyList(list):
             Sorted list
         """
 
-        list_sorted = sorted(self)
-        print(list_sorted)
+        if not self:
+            print(self)
+        else:
+            list_sorted = sorted(self)
+            print(list_sorted)
 
 
 if __name__ == "__main__":

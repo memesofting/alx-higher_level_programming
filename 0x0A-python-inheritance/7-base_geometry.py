@@ -20,13 +20,18 @@ class BaseGeometry:
         """validates value to be a positive integer
         Args:
             name: (str) variable
-            vlaue: (int) variable
+            value: (int) variable
         """
 
         self.name = name
         self.value = value
 
         if not isinstance(self.value, int):
-            raise TypeError(f"{value} must be an integer")
+            raise TypeError("value must be an integer")
         if self.value <= 0:
-            raise ValueError(f"{value} must be greater than 0")
+            raise ValueError("value must be greater than 0")
+
+
+if __name__ == "__main__":
+    import doctest
+    doctest.testfile()

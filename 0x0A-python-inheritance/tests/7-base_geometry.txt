@@ -35,3 +35,21 @@
 ...     print(f"[Exception] {str(e)}")
 ...
 [Exception] me must be an integer
+>>> try:
+...     bg.integer_validator("me", {3, 4})
+... except Exception as e:
+...     print(f"[Exception] {str(e)}")
+...
+[Exception] me must be an integer
+>>> try:
+...     bg.integer_validator("me", None)
+... except Exception as e:
+...     print(f"[Exception] {str(e)}")
+...
+[Exception] me must be an integer
+>>> try:
+...     bg.integer_validator("me", True)
+... except Exception as e:
+...     print(f"[Exception] {str(e)}")
+...
+[Exception] me must be an integer

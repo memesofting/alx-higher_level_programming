@@ -2,9 +2,6 @@
 """Defines a rectangle"""
 
 
-# import importlib
-# BaseGeometry = importlib.import_module('7-base_geometry').BaseGeometry
-
 class BaseGeometry:
     """Base class for geometry operations
 

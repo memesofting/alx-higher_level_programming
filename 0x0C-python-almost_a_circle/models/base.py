@@ -1,12 +1,17 @@
 #!/usr/bin/python3
+"""Tis is a base class module"""
+
 
 class Base:
+    """Tis is a base class"""
+
     __nb_objects = 0
+
     def __init__(self, id=None):
-        self.__id = id
+        """This is a class constructor"""
 
         if id is not None:
-            self.__id = id
+            self.id = id
         else:
             Base.__nb_objects = Base.__nb_objects + 1
-            self.__id = Base.__nb_objects
+            self.id = Base.__nb_objects

@@ -54,8 +54,12 @@ class Rectangle(Base):
         self.__y = value
 
     def area(self):
-        a = self.__width * self.__height
-        if self.__width == 0 or self.__height == 0:
+        """Gets the area of rectangle
+        Returns:
+            area = width * height
+        """
+        a = self.width * self.height
+        if self.width == 0 or self.height == 0:
             a = 0
             return a
         else:

@@ -51,7 +51,9 @@ class TestRectangle(unittest.TestCase):
         self.assertTrue(hasattr(Rectangle, "__str__"), "method does not exist")
     
     def test_update(self):
-        self.assertTrue(hasattr(Rectangle, "update"), "metod does not exist")       
+        self.assertTrue(hasattr(Rectangle, "update"), "metod does not exist")
+    
+           
 if __name__ == "__main__":
     unittest.main()
         

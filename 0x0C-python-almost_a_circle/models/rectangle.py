@@ -64,3 +64,12 @@ class Rectangle(Base):
             return a
         else:
             return a
+
+    def display(self):
+        """Method prints to standard output the Rectangle instance
+        with character '#'
+        """
+        for i in range(self.height):
+            for i in range(self.width):
+                print("#", end='')
+            print()

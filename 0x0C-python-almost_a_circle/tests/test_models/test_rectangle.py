@@ -72,8 +72,8 @@ class TestRectangle(unittest.TestCase):
         """Checks for update method in Rectangle class"""
         self.assertTrue(hasattr(Rectangle, "update"), "method does not exist")
 
-    def test_update_output(self):
-        """Tests update method output"""
+    def test_update_args(self):
+        """Tests update method with arguments output"""
         r1 = Rectangle(10, 10, 10, 10)
         r1.update(89)
         self.assertEqual(str(r1), "[Rectangle] (89) 10/10 - 10/10")
@@ -85,6 +85,9 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(str(r1), "[Rectangle] (89) 3/10 - 1/2")
         r1.update(89, 1, 2, 3, 4)
         self.assertEqual(str(r1), "[Rectangle] (89) 3/4 - 1/2")
+        r1.update(id=90)
+        # self.assertEqual(str(r1), "[Rectangle] (90) 3/4 - 1/2")
+        self.assertEqual(r1.id, 90)
 
 
 if __name__ == "__main__":

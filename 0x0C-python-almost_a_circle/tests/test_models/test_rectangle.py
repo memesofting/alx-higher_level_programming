@@ -3,8 +3,9 @@ import unittest
 
 from models.rectangle import Rectangle
 
+
 class TestRectangle(unittest.TestCase):
-    
+
     def test_attributes_assignment(self):
         rectangle1 = Rectangle(1, 2)
         rectangle2 = Rectangle(1, 2, 3)
@@ -17,16 +18,17 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(rectangle3.x, 3)
         self.assertEqual(rectangle3.y, 4)
         self.assertEqual(rectangle4.id, 5)
-        
+
     def test_string_attributes_value(self):
         with self.assertRaises(TypeError):
-            rectangle5  = Rectangle("1", 2)
+            rectangle5 = Rectangle("1", 2)
         with self.assertRaises(TypeError):
-            rectangle6  = Rectangle(1, "2")
+            rectangle6 = Rectangle(1, "2")
         with self.assertRaises(TypeError):
-            rectangle7  = Rectangle(1, 2, "3")
+            rectangle7 = Rectangle(1, 2, "3")
         with self.assertRaises(TypeError):
-            rectangle8  = Rectangle(1, 2, 3, "4")
+            rectangle8 = Rectangle(1, 2, 3, "4")
+
     def test_negative_attributes_value(self):
         with self.assertRaises(ValueError):
             rectangle9 = Rectangle(-1, 2)
@@ -40,20 +42,20 @@ class TestRectangle(unittest.TestCase):
             rectangle12 = Rectangle(1, 2, -3)
         with self.assertRaises(ValueError):
             rectangle12 = Rectangle(1, 2, 3, -4)
-        
+
     def test_area(self):
         self.assertTrue(hasattr(Rectangle, "area"), "method does not exist")
-    
+
     def test_display(self):
-        self.assertTrue(hasattr(Rectangle, "display"), "method does not exist")    
-    
+        self.assertTrue(hasattr(Rectangle, "display"), "method does not exist")
+
     def test_str(self):
-        self.assertTrue(hasattr(Rectangle, "__str__"), "method does not exist")
-    
+        rectangle = Rectangle(3, 4, 5, 6, 7)
+        self.assertEqual(str(rectangle), "[Rectangle] (7) 5/6 - 3/4")
+
     def test_update(self):
         self.assertTrue(hasattr(Rectangle, "update"), "method does not exist")
-    
-           
+
+
 if __name__ == "__main__":
     unittest.main()
-        

@@ -6,8 +6,10 @@ from models.rectangle import Rectangle
 
 
 class TestRectangle(unittest.TestCase):
+    """Test cases for Rectangle class"""
 
     def test_attributes_assignment(self):
+        """Tests attributes assignment"""
         rectangle1 = Rectangle(1, 2)
         rectangle2 = Rectangle(1, 2, 3)
         rectangle3 = Rectangle(1, 2, 3, 4)
@@ -21,6 +23,7 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(rectangle4.id, 5)
 
     def test_string_attributes_value(self):
+        """Tests for string attributes input"""
         with self.assertRaises(TypeError):
             rectangle5 = Rectangle("1", 2)
         with self.assertRaises(TypeError):
@@ -31,6 +34,7 @@ class TestRectangle(unittest.TestCase):
             rectangle8 = Rectangle(1, 2, 3, "4")
 
     def test_negative_attributes_value(self):
+        """Tests for negative attributes value"""
         with self.assertRaises(ValueError):
             rectangle9 = Rectangle(-1, 2)
         with self.assertRaises(ValueError):
@@ -45,36 +49,43 @@ class TestRectangle(unittest.TestCase):
             rectangle12 = Rectangle(1, 2, 3, -4)
 
     def test_area(self):
+        """Checks for area method in Rectangle class"""
         self.assertTrue(hasattr(Rectangle, "area"), "method does not exist")
 
     def test_display(self):
+        """Checks for display method in Rectangle class"""
         self.assertTrue(hasattr(Rectangle, "display"), "method does not exist")
 
     @patch('sys.stdout', new_callable=io.StringIO)
     def test_display_output(self, mock_stdout):
+        """Tests display method output"""
         r1 = Rectangle(2, 3, 2, 2)
         r1.display()
         self.assertEqual(mock_stdout.getvalue(), "\n\n  ##\n  ##\n  ##\n")
 
     def test_str(self):
+        """Test __str__ override"""
         rectangle = Rectangle(3, 4, 5, 6, 7)
         self.assertEqual(str(rectangle), "[Rectangle] (7) 5/6 - 3/4")
 
     def test_update(self):
+        """Checks for update method in Rectangle class"""
         self.assertTrue(hasattr(Rectangle, "update"), "method does not exist")
-    
+
     def test_update_output(self):
-         r1 = Rectangle(10, 10, 10, 10)
-         r1.update(89)
-         self.assertEqual(str(r1), "[Rectangle] (89) 10/10 - 10/10")
-         r1.update(89, 1)
-         self.assertEqual(str(r1), "[Rectangle] (89) 10/10 - 1/10")
-         r1.update(89, 1, 2)
-         self.assertEqual(str(r1), "[Rectangle] (89) 10/10 - 1/2")
-         r1.update(89, 1, 2, 3)
-         self.assertEqual(str(r1), "[Rectangle] (89) 3/10 - 1/2")
-         r1.update(89, 1, 2, 3, 4)
-         self.assertEqual(str(r1), "[Rectangle] (89) 3/4 - 1/2")
+        """Tests update method output"""
+        r1 = Rectangle(10, 10, 10, 10)
+        r1.update(89)
+        self.assertEqual(str(r1), "[Rectangle] (89) 10/10 - 10/10")
+        r1.update(89, 1)
+        self.assertEqual(str(r1), "[Rectangle] (89) 10/10 - 1/10")
+        r1.update(89, 1, 2)
+        self.assertEqual(str(r1), "[Rectangle] (89) 10/10 - 1/2")
+        r1.update(89, 1, 2, 3)
+        self.assertEqual(str(r1), "[Rectangle] (89) 3/10 - 1/2")
+        r1.update(89, 1, 2, 3, 4)
+        self.assertEqual(str(r1), "[Rectangle] (89) 3/4 - 1/2")
+
 
 if __name__ == "__main__":
     unittest.main()

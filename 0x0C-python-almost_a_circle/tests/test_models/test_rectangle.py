@@ -42,16 +42,16 @@ class TestRectangle(unittest.TestCase):
             rectangle12 = Rectangle(1, 2, 3, -4)
         
     def test_area(self):
-        self.assertTrue(hasattr(Rectangle, "area"), "metod does not exist")
+        self.assertTrue(hasattr(Rectangle, "area"), "method does not exist")
     
     def test_display(self):
-        self.assertTrue(hasattr(Rectangle, "display"), "metod does not exist")    
+        self.assertTrue(hasattr(Rectangle, "display"), "method does not exist")    
     
     def test_str(self):
         self.assertTrue(hasattr(Rectangle, "__str__"), "method does not exist")
     
     def test_update(self):
-        self.assertTrue(hasattr(Rectangle, "update"), "metod does not exist")
+        self.assertTrue(hasattr(Rectangle, "update"), "method does not exist")
     
            
 if __name__ == "__main__":

@@ -62,7 +62,19 @@ class TestRectangle(unittest.TestCase):
 
     def test_update(self):
         self.assertTrue(hasattr(Rectangle, "update"), "method does not exist")
-
+    
+    def test_update_output(self):
+         r1 = Rectangle(10, 10, 10, 10)
+         r1.update(89)
+         self.assertEqual(str(r1), "[Rectangle] (89) 10/10 - 10/10")
+         r1.update(89, 1)
+         self.assertEqual(str(r1), "[Rectangle] (89) 10/10 - 1/10")
+         r1.update(89, 1, 2)
+         self.assertEqual(str(r1), "[Rectangle] (89) 10/10 - 1/2")
+         r1.update(89, 1, 2, 3)
+         self.assertEqual(str(r1), "[Rectangle] (89) 3/10 - 1/2")
+         r1.update(89, 1, 2, 3, 4)
+         self.assertEqual(str(r1), "[Rectangle] (89) 3/4 - 1/2")
 
 if __name__ == "__main__":
     unittest.main()

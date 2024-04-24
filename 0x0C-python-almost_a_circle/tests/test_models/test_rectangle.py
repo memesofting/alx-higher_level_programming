@@ -1,5 +1,6 @@
 import unittest
-
+from unittest.mock import patch
+import io
 
 from models.rectangle import Rectangle
 
@@ -48,6 +49,12 @@ class TestRectangle(unittest.TestCase):
 
     def test_display(self):
         self.assertTrue(hasattr(Rectangle, "display"), "method does not exist")
+
+    @patch('sys.stdout', new_callable=io.StringIO)
+    def test_display_output(self, mock_stdout):
+        r1 = Rectangle(2, 3, 2, 2)
+        r1.display()
+        self.assertEqual(mock_stdout.getvalue(), "\n\n  ##\n  ##\n  ##\n")
 
     def test_str(self):
         rectangle = Rectangle(3, 4, 5, 6, 7)

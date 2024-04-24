@@ -69,8 +69,14 @@ class Rectangle(Base):
         """Method prints to standard output the Rectangle instance
         with character '#'
         """
+        if self.y > 0:
+            for a in range(self.y):
+                print()
         for i in range(self.height):
-            for i in range(self.width):
+            if self.x > 0:
+                for b in range(self.x):
+                    print(' ', end='')
+            for j in range(self.width):
                 print("#", end='')
             print()
 

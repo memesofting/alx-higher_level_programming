@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Tis is a base class module"""
+"""This is a base class module"""
 
 
 from models.base import Base

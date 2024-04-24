@@ -41,9 +41,7 @@ class TestRectangle(unittest.TestCase):
         with self.assertRaises(ValueError):
             rectangle12 = Rectangle(1, 2, 3, -4)
         
-        
-        
-        
+            
 if __name__ == "__main__":
     unittest.main()
         

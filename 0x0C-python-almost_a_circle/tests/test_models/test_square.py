@@ -17,7 +17,10 @@ class TestSquare(unittest.TestCase):
     def test_str(self):
         """Test __str__override"""
         s1 = Square(5)
-        self.assertEqual(str(s1), "[Square] (4) 0/0 - 5")
+        self.assertEqual(str(s1), "[Square] (5) 0/0 - 5")
+        
+    def test_size(self):
+        self.assertRaises(Square("9"), "[TypeError] width must be an integer")
         
 if __name__ == "__main__":
     unittest.main()

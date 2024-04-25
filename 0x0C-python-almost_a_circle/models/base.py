@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-"""Tis is a base class module"""
+"""This is a base class module"""
 
 
 class Base:
-    """Tis is a base class"""
+    """This is a base class"""
 
     __nb_objects = 0
 

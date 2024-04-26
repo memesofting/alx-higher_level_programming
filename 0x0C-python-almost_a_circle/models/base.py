@@ -26,7 +26,7 @@ class Base:
         self.name = name
         self.value = value
 
-        if type(value) is not int:
+        if not isinstance(value, int):
             raise TypeError(f"{name} must be an integer")
         if name in ["width", "height"] and value <= 0:
             raise ValueError(f"{name} must be > 0")

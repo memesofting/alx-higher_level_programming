@@ -15,14 +15,16 @@ class TestSquare(unittest.TestCase):
         self.assertEqual(s2.area(), 4)
         self.assertEqual(s3.area(), 9)
 
-    def test_str(self):
-        """Test __str__override"""
-        s1 = Square(5)
-        self.assertEqual(str(s1), "[Square] (5) 0/0 - 5")
-
     def test_size(self):
         """Test square size"""
-        self.assertRaises(Square("9"), "[TypeError] width must be an integer")
+        with self.assertRaises(TypeError):
+            s = Square("9")
+
+    def test_update(self):
+        """Test swuare update function"""
+        s = Square(5)
+        s.update(10, 2, 3, 4)
+        self.assertEqual(str(s), "[Square] (10) 4/0 - 2")
 
 
 if __name__ == "__main__":

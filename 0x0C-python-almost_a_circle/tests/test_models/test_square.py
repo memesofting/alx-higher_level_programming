@@ -26,6 +26,12 @@ class TestSquare(unittest.TestCase):
         s.update(10, 2, 3, 4)
         self.assertEqual(str(s), "[Square] (10) 4/0 - 2")
 
+    def test_to_dictionary_square(self):
+        """tests dictionary representation"""
+        s1 = Square(10, 2, 1, 9)
+        s1_d = {'id': 9, 'x': 2, 'y': 1, 'size': 10}
+        self.assertEqual(s1.to_dictionary(), s1_d)
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -86,8 +86,14 @@ class TestRectangle(unittest.TestCase):
         r1.update(89, 1, 2, 3, 4)
         self.assertEqual(str(r1), "[Rectangle] (89) 3/4 - 1/2")
         r1.update(id=90)
-        # self.assertEqual(str(r1), "[Rectangle] (90) 3/4 - 1/2")
+        self.assertEqual(str(r1), "[Rectangle] (90) 3/4 - 1/2")
         self.assertEqual(r1.id, 90)
+
+    def test_to_dictionary(self):
+        """tests dictionary representation"""
+        r1 = Rectangle(10, 2, 1, 9, 3)
+        r1_d = {'x': 1, 'y': 9, 'id': 3, 'height': 2, 'width': 10}
+        self.assertEqual(r1.to_dictionary(), r1_d)
 
 
 if __name__ == "__main__":

@@ -1,11 +1,11 @@
 #!/usr/bin/python3
-"""lists states starting with 'N' from the database hbtn_0c_0_usa"""
+"""filters states starting with 'N' from the database hbtn_0c_0_usa"""
 import MySQLdb
 import sys
 
 
-def list_states(mysql_username, mysql_password, database_name):
-    """lists all states from the database hbtn_0c_0_usa"""
+def filter_states(mysql_username, mysql_password, database_name):
+    """filters states starting with 'N' from the database hbtn_0c_0_usa"""
 
     db = MySQLdb.connect(
         host="localhost",
@@ -24,8 +24,11 @@ def list_states(mysql_username, mysql_password, database_name):
 
 
 if __name__ == "__main__":
-    if len(sys.argv) == 4:
-        mysql_username = sys.argv[1]
-        mysql_password = sys.argv[2]
-        database_name = sys.argv[3]
-        list_states(mysql_username, mysql_password, database_name)
+    if len(sys.argv) != 4:
+        print("Usage: {} mysql_username mysql_password database_name".
+              format(sys.argv[0]))
+        sys.exit(1)
+    mysql_username = sys.argv[1]
+    mysql_password = sys.argv[2]
+    database_name = sys.argv[3]
+    filter_states(mysql_username, mysql_password, database_name)

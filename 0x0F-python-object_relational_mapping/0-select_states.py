@@ -15,14 +15,18 @@ def list_states(mysql_username, mysql_password, database_name):
         )
     cursor = db.cursor()
     cursor.execute("SELECT * FROM states ORDER BY id ASC")
-    """rows = cursor.fetchall()"""
-    for row in cursor:
-        print(row)
+    states = cursor.fetchall()
+    for state in states:
+        print(state)
     cursor.close()
     db.close()
 
 
 if __name__ == "__main__":
+    if len(sys.argv) != 4:
+        print("Usage: {} mysql_username mysql_password database_name".
+              format(sys.argv[0]))
+        sys.exit(1)
     mysql_username = sys.argv[1]
     mysql_password = sys.argv[2]
     database_name = sys.argv[3]

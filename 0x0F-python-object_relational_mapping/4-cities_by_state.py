@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""list all states from database"""
+"""list all cities from database"""
 import sys
 import MySQLdb
 
@@ -16,7 +16,11 @@ def list_cities(mysql_username, mysql_password, db_name):
     )
 
     cursor = db.cursor()
-    cursor.execute("SELECT * FROM cities ORDER BY id ASC")
+    query = """
+    SELECT cities.id, cities.name, states.name FROM cities
+    JOIN states ON cities.state_id = states.id
+    ORDER BY cities.id ASC"""
+    cursor.execute(query)
     result = cursor.fetchall()
     for city in result:
         print(city)

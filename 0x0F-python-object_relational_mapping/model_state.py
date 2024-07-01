@@ -2,8 +2,7 @@
 """Module defines a state and an instance of
 Base = declaration_base()"""
 import sqlalchemy
-import MySQLdb
-from sqlalchemy import create_engine, Column, Integer, String
+from sqlalchemy import Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
 
 

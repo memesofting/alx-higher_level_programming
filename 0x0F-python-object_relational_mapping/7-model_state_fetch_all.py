@@ -1,17 +1,29 @@
 #!/usr/bin/python3
 """Script lists all state Objects from database"""
-import MySQLdb
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from model_state import Base, State
 import sys
+import urllib.parse
 
 
 def all_states(mysql_username, mysql_password, db_name):
     """list all states using sqlalchemy"""
 
-    connection_string = f'''mysql+mysqldb://
-    {mysql_username}:{mysql_password}@localhost:3306/{db_name}'''
+    mysql_username = urllib.parse.quote_plus(mysql_username)
+    mysql_password = urllib.parse.quote_plus(mysql_password)
+    db_name = urllib.parse.quote_plus(db_name)
+
+    connection_string = f'''mysql+mysqldb://{mysql_username}:
+    {mysql_password}@localhost:3306/{db_name}'''
+    """try:
+        engine = create_engine(connection_string)
+        connection = engine.connect()
+        print("connection successful")
+        connection.close()
+    except Exception as e:
+        print(f"connection failed: {e}")"""
+
     engine = create_engine(connection_string)
     Base.metadata.create_all(engine)
 

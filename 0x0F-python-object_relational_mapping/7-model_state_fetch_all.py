@@ -16,13 +16,6 @@ def all_states(mysql_username, mysql_password, db_name):
 
     connection_string = f'''mysql+mysqldb://{mysql_username}:
     {mysql_password}@localhost:3306/{db_name}'''
-    """try:
-        engine = create_engine(connection_string)
-        connection = engine.connect()
-        print("connection successful")
-        connection.close()
-    except Exception as e:
-        print(f"connection failed: {e}")"""
 
     engine = create_engine(connection_string)
     Base.metadata.create_all(engine)

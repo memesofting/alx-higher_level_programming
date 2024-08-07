@@ -8,7 +8,7 @@ import urllib.parse
 
 
 def first_states(mysql_username, mysql_password, db_name):
-    """list all states using sqlalchemy"""
+    """list first state using sqlalchemy"""
 
     mysql_username = urllib.parse.quote_plus(mysql_username)
     mysql_password = urllib.parse.quote_plus(mysql_password)

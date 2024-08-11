@@ -1,2 +1,4 @@
-const headerElement = document.getElementsByTagName('header')[0];
-headerElement.style.color = '#FF0000';
+/* global $ */
+$(document).ready(function () {
+  $('header').css('color', '#FF0000');
+});
